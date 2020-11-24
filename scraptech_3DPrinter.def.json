@@ -1,0 +1,36 @@
+{
+    "name": "ScrapTech3DPrinter",
+    "version": 2,
+    "inherits": "fdmprinter",
+    "metadata":
+    {
+        "visible": true,
+        "author": "ScrapTechnician",
+        "manufacturer": "ScrapTech",
+        "file_formats": "text/x-SCRPTCH;text/x-gcode",
+        "platform": "ScrapTechPlatform.STL",
+        "platform_offset": [-17.5, -2, 19.5],
+        "machine_extruder_trains": {
+            "0": "uni_print_3d_extruder_0"
+        }
+    },
+
+    "overrides": {
+        "machine_name": { "default_value": "ScrapTech3DPrinter" },
+        "machine_heated_bed": { "default_value": false },
+        "machine_width": { "default_value": 35 },
+        "machine_height": { "default_value": 39 },
+        "machine_depth": { "default_value": 39 },
+        "machine_center_is_zero": { "default_value": true },
+        "machine_gcode_flavor": { "default_value": "RepRap (Marlin/Sprinter)" },
+
+        "machine_start_gcode": {
+            "default_value": ";Welcome to ScrapTechPrint\nG21 G90 G40\nG0 Z-0.2\nT0 M6\nG17"			
+        },
+        "machine_end_gcode": {
+            "default_value": "M5\nG0 X0 Y0\nG0 Z30\nG0 Y-20\nM30\n;Thank you for printing with ScrapTech,\n;We hope you enjoyed your print"
+		},
+		"adhesion_type": { "default_value": "none" }
+
+    }
+}
